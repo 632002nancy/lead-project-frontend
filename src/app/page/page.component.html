@@ -1,0 +1,75 @@
+<div class="lead">
+    <h2>Welcome to JIO Apps</h2>
+    <form class="leadForm" #leadForm="ngForm" (ngSubmit)="postData(leadForm.value)" >
+        <label>First Name</label>
+        <input type="text" placeholder="First Name" name="fName" ngModel #fiName="ngModel"  required>
+        <div>
+            <small *ngIf="fiName.touched && fiName.invalid">First Name is a required field</small>
+        </div>
+
+        <label>Last Name</label>
+        <input type="text" placeholder="Last Name" ngModel #laName="ngModel" name="lName" required>
+        <div>
+            <small *ngIf="laName.touched && laName.invalid">Last Name is a required field</small>
+        </div>
+
+        <label>Mobile No</label>
+        <input type="number" placeholder="123-456-7890" onKeyPress="if(this.value.length==10) return false;"  required ngModel name="mobile" #mob="ngModel">
+        <div>
+            <small *ngIf="mob.touched && mob.invalid">Mobile Number is a required field</small>
+        </div>
+
+        <label>Address</label>
+        <input type="text" placeholder="Address" ngModel #add="ngModel" name="address" required>
+        <div>
+            <small *ngIf="add.touched && add.invalid">Address is a required field</small>
+        </div>
+
+        <label>Pin Code</label>
+        <input type="number" onKeyPress="if(this.value.length==6) return false;" id="pincode" placeholder="Pin" ngModel name="pinCode" 
+        required #pinCode="ngModel" (input)="pinFetch(pinCode.value)">
+        <div>
+            <small *ngIf="pinCode.touched && pinCode.invalid">Pin Code is a required field</small>
+        </div>
+
+        <div id="result"></div>
+
+        <label>State</label>
+        <input type="text" name="state" ngModel required #st="ngModel" [(ngModel)]="selectedState" [disabled]="stateDis">
+        <div>
+            <small *ngIf="st.touched && st.invalid">State is a required field</small>
+        </div>
+        
+        <label>City</label>
+        <input type="text" name="city" ngModel required #ci="ngModel" [(ngModel)]="selectedCity" [disabled]="cityDis">
+        <div>
+            <small *ngIf="ci.touched && ci.invalid">City is a required field</small>
+        </div>
+
+        <label>JIO Products</label>
+        <select ngModel name="product" required #jio="ngModel">
+            <option *ngFor="let prod of products" [value]="prod.value">{{prod.viewValue}} 
+            </option>
+        </select>
+        <div>
+            <small *ngIf="jio.touched && jio.invalid">JIO Products is a required field</small>
+        </div>
+
+        <label>Preferred Date</label>
+        <input type="date" ngModel name="date" required #pDate="ngModel">
+        <div>
+            <small *ngIf="pDate.touched && pDate.invalid">Preferred Date is a required field</small>
+        </div>
+
+        <label>Preferred Time</label>
+        <input type="time" ngModel name="time" required #pTime="ngModel">
+        <div>
+            <small *ngIf="pTime.touched && pTime.invalid">Preferred Time is a required field</small>
+        </div>
+
+        <Button type="submit" [disabled]="!leadForm.valid">Submit</Button>
+    </form>
+</div>
+<div class="leadButton">
+    <button (click)="leadcomponent()">See All Leads</button>
+</div>

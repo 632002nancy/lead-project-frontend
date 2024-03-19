@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "http://postalpincode.in/api/postpincode",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  

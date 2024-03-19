@@ -1,0 +1,27 @@
+/* body{
+    background-image: url(https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.pngimagesfree.com%2FLOGO%2FJio-Digital-Life.htm&psig=AOvVaw3O2eCV2JCUWtnIuWEhCXh9&ust=1710660010372000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLiIvKmf-IQDFQAAAAAdAAAAABAJ);
+} */
+
+.wel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* margin-top: 30em; */
+}
+
+button{
+    margin-top: 12em;
+    color: white;
+    background-color: rgb(78, 138, 187);
+    border: 2px solid rgb(4, 25, 82);
+    border-radius: 1.2em;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    cursor: pointer;
+}
+h1{
+    margin-top: 0em;
+    font-family: cursive;
+}

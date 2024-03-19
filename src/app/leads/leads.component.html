@@ -1,0 +1,45 @@
+<div class="leadsDisplay">
+  <h1>Hii, Choose your Favorite JIO Product to see the its existing customers</h1>
+
+<label>Choose JIO Product</label>
+        <select [(ngModel)]="selectedValue" (change)="onSelectChange()">
+            <option *ngFor="let prod of products" [value]="prod.value">{{prod.viewValue}} 
+            </option>
+        </select>
+
+<!-- <button (click)="showLeads()">Click to Search</button> -->
+<div >
+  <div *ngIf="display" class="tabel">
+    <h2 >Data of the Leads using '{{selectedValue}}'... </h2>
+
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Mobile No</th>
+        <th>Address</th>
+        <th>PinCode</th>
+        <th>State</th>
+        <th>City</th>
+        <th>Product</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+
+      <tr *ngFor="let item of allLeads">
+        <td>{{item.fName}}</td>
+        <td>{{item.lName}}</td>
+        <td>{{item.mobile}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.pinCode}}</td>
+        <td>{{item.state}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.product}}</td>
+        <td>{{item.date | date}}</td>
+        <td>{{item.time}}</td>
+      </tr>
+    </table>
+  </div>
+   
+  </div>
+</div>
